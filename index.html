@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHLOX - Premium Tech Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">PHLOX</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active" data-page="home">Home</a>
+                <a href="#shop" class="nav-link" data-page="shop">Shop</a>
+                <a href="#about" class="nav-link" data-page="about">About Us</a>
+                <a href="#reviews" class="nav-link" data-page="reviews">Reviews</a>
+                <a href="#contact" class="nav-link" data-page="contact">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn-search" onclick="toggleSearch()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <button class="btn-cart" onclick="toggleCart()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span class="cart-count">0</span>
+                </button>
+                <button class="btn-profile">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search Modal -->
+    <div class="search-modal" id="searchModal">
+        <div class="search-content">
+            <input type="text" class="search-input" placeholder="Search products...">
+            <button class="btn-close" onclick="toggleSearch()">✕</button>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Shopping Cart</h2>
+            <button class="btn-close" onclick="toggleCart()">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="btn-checkout">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="mainContent">
+        <!-- HOME PAGE -->
+        <div class="page" id="home-page">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-content">
+                    <p class="hero-label">Beats Solo</p>
+                    <h1 class="hero-title">Wireless Headphone</h1>
+                    <button class="btn-primary" onclick="scrollToShop()">Shop the Collection</button>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&h=500&fit=crop" alt="Beats Wireless Headphone">
+                </div>
+            </section>
+
+            <!-- Feature Cards -->
+            <section class="feature-cards">
+                <div class="feature-card card-headphones">
+                    <div class="card-content">
+                        <p class="card-label">Enjoy</p>
+                        <h3 class="card-title">HEADPHONES</h3>
+                        <button class="btn-secondary">Browse</button>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1484704849700-f032a568e944?w=300&h=300&fit=crop" alt="Headphones">
+                </div>
+
+                <div class="feature-card card-smartwatch">
+                    <div class="card-content">
+                        <p class="card-label">Wear</p>
+                        <h3 class="card-title">SMARTWATCH</h3>
+                        <button class="btn-secondary">Browse</button>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&h=300&fit=crop" alt="Smartwatch">
+                </div>
+
+                <div class="feature-card card-devices">
+                    <div class="card-content">
+                        <p class="card-label">Tech</p>
+                        <h3 class="card-title">DEVICES</h3>
+                        <button class="btn-secondary">Browse</button>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=300&h=300&fit=crop" alt="Devices">
+                </div>
+            </section>
+
+            <!-- More Feature Cards -->
+            <section class="feature-cards-row2">
+                <div class="feature-card card-gaming">
+                    <div class="card-content">
+                        <p class="card-label">Best</p>
+                        <h3 class="card-title">GAMING</h3>
+                        <button class="btn-secondary">Browse</button>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1486572788984-e12dcb32e07d?w=300&h=300&fit=crop" alt="Gaming">
+                </div>
+
+                <div class="feature-card card-vr">
+                    <div class="card-content">
+                        <p class="card-label">Play</p>
+                        <h3 class="card-title">GAME</h3>
+                        <button class="btn-secondary">Browse</button>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=300&h=300&fit=crop" alt="VR Gaming">
+                </div>
+
+                <div class="feature-card card-speakers">
+                    <div class="card-content">
+                        <p class="card-label">New</p>
+                        <h3 class="card-title">SPEAKERS</h3>
+                        <button class="btn-secondary">Browse</button>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1589359481516-0dca50fcff4a?w=300&h=300&fit=crop" alt="Speakers">
+                </div>
+            </section>
+
+            <!-- Trust Badges -->
+            <section class="trust-badges">
+                <div class="badge">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                    <div>
+                        <h4>Secure Payment</h4>
+                        <p>SSL Encrypted</p>
+                    </div>
+                </div>
+                <div class="badge">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M5 12h14M12 5v14"></path>
+                    </svg>
+                    <div>
+                        <h4>Free Shipping</h4>
+                        <p>On Orders $50+</p>
+                    </div>
+                </div>
+                <div class="badge">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M9 11l3 3L22 4"></path>
+                        <path d="M20 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h11"></path>
+                    </svg>
+                    <div>
+                        <h4>Money Guarantee</h4>
+                        <p>30-Day Returns</p>
+                    </div>
+                </div>
+                <div class="badge">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path>
+                    </svg>
+                    <div>
+                        <h4>24/7 Support</h4>
+                        <p>Phone & Chat</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Summer Sale Banner -->
+            <section class="promo-banner">
+                <div class="promo-content">
+                    <p class="promo-label">SUMMER SALE</p>
+                    <h2 class="promo-title">20% OFF</h2>
+                    <p class="promo-subtitle">Premium Headphones Collection</p>
+                    <p class="promo-dates">20 May - 7 Dec</p>
+                    <button class="btn-primary">Shop Now</button>
+                </div>
+                <img src="https://images.unsplash.com/photo-1487215078519-e21cc028cb29?w=400&h=400&fit=crop" alt="Promo">
+            </section>
+
+            <!-- Best Sellers -->
+            <section class="best-sellers">
+                <h2>Best Seller Products</h2>
+                <p class="section-subtitle">Premium products with excellent reviews</p>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=250&h=250&fit=crop" alt="Beats Pro">
+                            <span class="badge-new">New</span>
+                        </div>
+                        <h3 class="product-name">Beats Pro Studio</h3>
+                        <div class="product-rating">
+                            <div class="stars">★★★★★</div>
+                            <span>(245)</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$399</span>
+                            <button class="btn-add-cart" onclick="addToCart('Beats Pro Studio', 399)">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <circle cx="9" cy="21" r="1"></circle>
+                                    <circle cx="20" cy="21" r="1"></circle>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1484704849700-f032a568e944?w=250&h=250&fit=crop" alt="Sony WH">
+                            <span class="badge-hot">Hot</span>
+                        </div>
+                        <h3 class="product-name">Sony WH-1000XM5</h3>
+                        <div class="product-rating">
+                            <div class="stars">★★★★★</div>
+                            <span>(189)</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$349</span>
+                            <button class="btn-add-cart" onclick="addToCart('Sony WH-1000XM5', 349)">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <circle cx="9" cy="21" r="1"></circle>
+                                    <circle cx="20" cy="21" r="1"></circle>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1487215078519-e21cc028cb29?w=250&h=250&fit=crop" alt="Apple AirPods">
+                        </div>
+                        <h3 class="product-name">Apple AirPods Pro Max</h3>
+                        <div class="product-rating">
+                            <div class="stars">★★★★★</div>
+                            <span>(312)</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$549</span>
+                            <button class="btn-add-cart" onclick="addToCart('Apple AirPods Pro Max', 549)">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <circle cx="9" cy="21" r="1"></circle>
+                                    <circle cx="20" cy="21" r="1"></circle>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=250&h=250&fit=crop" alt="Bose QC45">
+                        </div>
+                        <h3 class="product-name">Bose QuietComfort 45</h3>
+                        <div class="product-rating">
+                            <div class="stars">★★★★☆</div>
+                            <span>(156)</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$379</span>
+                            <button class="btn-add-cart" onclick="addToCart('Bose QuietComfort 45', 379)">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <circle cx="9" cy="21" r="1"></circle>
+                                    <circle cx="20" cy="21" r="1"></circle>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- SHOP PAGE -->
+        <div class="page" id="shop-page" style="display:none;">
+            <section class="shop-section">
+                <h1>Our Collection</h1>
+                <div class="shop-container">
+                    <aside class="filters-sidebar">
+                        <h3>Filters</h3>
+                        <div class="filter-group">
+                            <label class="filter-title">Category</label>
+                            <div class="filter-options">
+                                <input type="radio" name="category" id="cat-all" checked> <label for="cat-all">All Products</label><br>
+                                <input type="radio" name="category" id="cat-headphones"> <label for="cat-headphones">Headphones</label><br>
+                                <input type="radio" name="category" id="cat-smartwatch"> <label for="cat-smartwatch">Smartwatch</label><br>
+                                <input type="radio" name="category" id="cat-gaming"> <label for="cat-gaming">Gaming</label><br>
+                                <input type="radio" name="category" id="cat-speakers"> <label for="cat-speakers">Speakers</label>
+                            </div>
+                        </div>
+                        <div class="filter-group">
+                            <label class="filter-title">Price Range</label>
+                            <input type="range" min="0" max="1000" class="price-slider">
+                            <div class="price-display">$0 - $1000</div>
+                        </div>
+                        <div class="filter-group">
+                            <label class="filter-title">Rating</label>
+                            <div class="filter-options">
+                                <input type="checkbox"> <label>5 Stars</label><br>
+                                <input type="checkbox"> <label>4+ Stars</label><br>
+                                <input type="checkbox"> <label>3+ Stars</label>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <div class="shop-main">
+                        <div class="shop-header">
+                            <div class="view-options">
+                                <button class="view-btn active">Grid</button>
+                                <button class="view-btn">List</button>
+                            </div>
+                            <select class="sort-select">
+                                <option>Sort by: New Arrivals</option>
+                                <option>Price: Low to High</option>
+                                <option>Price: High to Low</option>
+                                <option>Most Popular</option>
+                                <option>Top Rated</option>
+                            </select>
+                        </div>
+
+                        <div class="products-grid shop-grid">
+                            <!-- Product Cards will be generated here -->
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1487215078519-e21cc028cb29?w=250&h=250&fit=crop" alt="Product">
+                                    <div class="product-overlay">
+                                        <button class="btn-quick-view">Quick View</button>
+                                    </div>
+                                </div>
+                                <h3 class="product-name">Premium Wireless Headphones</h3>
+                                <div class="product-rating">
+                                    <div class="stars">★★★★★</div>
+                                    <span>(248)</span>
+                                </div>
+                                <div class="product-footer">
+                                    <span class="product-price">$299</span>
+                                    <button class="btn-add-cart">Add to Cart</button>
+                                </div>
+                            </div>
+
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1484704849700-f032a568e944?w=250&h=250&fit=crop" alt="Product">
+                                    <div class="product-overlay">
+                                        <button class="btn-quick-view">Quick View</button>
+                                    </div>
+                                </div>
+                                <h3 class="product-name">Active Noise Cancelling</h3>
+                                <div class="product-rating">
+                                    <div class="stars">★★★★☆</div>
+                                    <span>(156)</span>
+                                </div>
+                                <div class="product-footer">
+                                    <span class="product-price">$249</span>
+                                    <button class="btn-add-cart">Add to Cart</button>
+                                </div>
+                            </div>
+
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=250&h=250&fit=crop" alt="Product">
+                                    <div class="product-overlay">
+                                        <button class="btn-quick-view">Quick View</button>
+                                    </div>
+                                </div>
+                                <h3 class="product-name">Studio Monitor Headphones</h3>
+                                <div class="product-rating">
+                                    <div class="stars">★★★★★</div>
+                                    <span>(312)</span>
+                                </div>
+                                <div class="product-footer">
+                                    <span class="product-price">$399</span>
+                                    <button class="btn-add-cart">Add to Cart</button>
+                                </div>
+                            </div>
+
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1487215078519-e21cc028cb29?w=250&h=250&fit=crop" alt="Product">
+                                    <div class="product-overlay">
+                                        <button class="btn-quick-view">Quick View</button>
+                                    </div>
+                                </div>
+                                <h3 class="product-name">Gaming Wireless Headset</h3>
+                                <div class="product-rating">
+                                    <div class="stars">★★★★★</div>
+                                    <span>(428)</span>
+                                </div>
+                                <div class="product-footer">
+                                    <span class="product-price">$179</span>
+                                    <button class="btn-add-cart">Add to Cart</button>
+                                </div>
+                            </div>
+
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=250&h=250&fit=crop" alt="Product">
+                                    <div class="product-overlay">
+                                        <button class="btn-quick-view">Quick View</button>
+                                    </div>
+                                </div>
+                                <h3 class="product-name">Smart Watch Pro</h3>
+                                <div class="product-rating">
+                                    <div class="stars">★★★★★</div>
+                                    <span>(189)</span>
+                                </div>
+                                <div class="product-footer">
+                                    <span class="product-price">$299</span>
+                                    <button class="btn-add-cart">Add to Cart</button>
+                                </div>
+                            </div>
+
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1589359481516-0dca50fcff4a?w=250&h=250&fit=crop" alt="Product">
+                                    <div class="product-overlay">
+                                        <button class="btn-quick-view">Quick View</button>
+                                    </div>
+                                </div>
+                                <h3 class="product-name">Portable BT Speaker</h3>
+                                <div class="product-rating">
+                                    <div class="stars">★★★★☆</div>
+                                    <span>(267)</span>
+                                </div>
+                                <div class="product-footer">
+                                    <span class="product-price">$149</span>
+                                    <button class="btn-add-cart">Add to Cart</button>
+                                </div>
+                            </div>
+
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1486572788984-e12dcb32e07d?w=250&h=250&fit=crop" alt="Product">
+                                    <div class="product-overlay">
+                                        <button class="btn-quick-view">Quick View</button>
+                                    </div>
+                                </div>
+                                <h3 class="product-name">Gaming Console Bundle</h3>
+                                <div class="product-rating">
+                                    <div class="stars">★★★★★</div>
+                                    <span>(567)</span>
+                                </div>
+                                <div class="product-footer">
+                                    <span class="product-price">$499</span>
+                                    <button class="btn-add-cart">Add to Cart</button>
+                                </div>
+                            </div>
+
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=250&h=250&fit=crop" alt="Product">
+                                    <div class="product-overlay">
+                                        <button class="btn-quick-view">Quick View</button>
+                                    </div>
+                                </div>
+                                <h3 class="product-name">Laptop Stand Pro</h3>
+                                <div class="product-rating">
+                                    <div class="stars">★★★★☆</div>
+                                    <span>(145)</span>
+                                </div>
+                                <div class="product-footer">
+                                    <span class="product-price">$89</span>
+                                    <button class="btn-add-cart">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pagination">
+                            <button class="page-btn">Previous</button>
+                            <button class="page-btn active">1</button>
+                            <button class="page-btn">2</button>
+                            <button class="page-btn">3</button>
+                            <button class="page-btn">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ABOUT PAGE -->
+        <div class="page" id="about-page" style="display:none;">
+            <section class="about-section">
+                <h1>About PHLOX</h1>
+                
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>Premium Audio & Tech Store</h2>
+                        <p>Since 2018, PHLOX has been dedicated to bringing the finest audio and technology products to enthusiasts and professionals worldwide. We believe that quality sound and innovative technology should be accessible to everyone.</p>
+                        <p>Our carefully curated collection features only the best brands and products, selected by our expert team of audio engineers and tech specialists.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=400&h=400&fit=crop" alt="About">
+                    </div>
+                </div>
+
+                <div class="about-stats">
+                    <div class="stat">
+                        <h3>10K+</h3>
+                        <p>Happy Customers</p>
+                    </div>
+                    <div class="stat">
+                        <h3>500+</h3>
+                        <p>Products</p>
+                    </div>
+                    <div class="stat">
+                        <h3>98%</h3>
+                        <p>Satisfaction Rate</p>
+                    </div>
+                    <div class="stat">
+                        <h3>24/7</h3>
+                        <p>Support</p>
+                    </div>
+                </div>
+
+                <div class="about-mission">
+                    <h2>Our Mission</h2>
+                    <p>To revolutionize how people experience audio and technology by providing premium products, expert guidance, and exceptional service.</p>
+                </div>
+
+                <div class="about-values">
+                    <h2>Our Values</h2>
+                    <div class="values-grid">
+                        <div class="value-card">
+                            <h3>Quality First</h3>
+                            <p>We never compromise on quality. Every product is tested and verified.</p>
+                        </div>
+                        <div class="value-card">
+                            <h3>Customer Focused</h3>
+                            <p>Your satisfaction is our priority. We're here to help you find the perfect product.</p>
+                        </div>
+                        <div class="value-card">
+                            <h3>Innovation</h3>
+                            <p>We stay ahead of technology trends to bring you the latest innovations.</p>
+                        </div>
+                        <div class="value-card">
+                            <h3>Sustainability</h3>
+                            <p>We care for the environment and promote sustainable practices.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-team">
+                    <h2>Meet Our Team</h2>
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop" alt="Team">
+                            <h3>John Smith</h3>
+                            <p>Founder & CEO</p>
+                        </div>
+                        <div class="team-member">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop" alt="Team">
+                            <h3>Sarah Johnson</h3>
+                            <p>Head of Product</p>
+                        </div>
+                        <div class="team-member">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop" alt="Team">
+                            <h3>Michael Chen</h3>
+                            <p>Tech Specialist</p>
+                        </div>
+                        <div class="team-member">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop" alt="Team">
+                            <h3>Emma Wilson</h3>
+                            <p>Customer Success</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- REVIEWS PAGE -->
+        <div class="page" id="reviews-page" style="display:none;">
+            <section class="reviews-section">
+                <h1>Customer Reviews & Testimonials</h1>
+                
+                <div class="reviews-summary">
+                    <div class="rating-box">
+                        <div class="rating-number">4.8</div>
+                        <div class="rating-stars">★★★★★</div>
+                        <p>Based on 2,347 reviews</p>
+                    </div>
+                    <div class="rating-bars">
+                        <div class="rating-bar">
+                            <span>★★★★★</span>
+                            <div class="bar"><div style="width: 78%"></div></div>
+                            <span>78%</span>
+                        </div>
+                        <div class="rating-bar">
+                            <span>★★★★☆</span>
+                            <div class="bar"><div style="width: 15%"></div></div>
+                            <span>15%</span>
+                        </div>
+                        <div class="rating-bar">
+                            <span>★★★☆☆</span>
+                            <div class="bar"><div style="width: 5%"></div></div>
+                            <span>5%</span>
+                        </div>
+                        <div class="rating-bar">
+                            <span>★★☆☆☆</span>
+                            <div class="bar"><div style="width: 2%"></div></div>
+                            <span>2%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=50&h=50&fit=crop" alt="User">
+                            </div>
+                            <div>
+                                <h3>John Anderson</h3>
+                                <p>Verified Purchase</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">★★★★★</div>
+                        <h4 class="testimonial-title">Best headphones I've ever owned!</h4>
+                        <p class="testimonial-text">The sound quality is absolutely exceptional. After trying many brands, these are by far the best. The noise cancellation is perfect for my work environment, and they're incredibly comfortable for long sessions.</p>
+                        <div class="testimonial-meta">
+                            <span class="meta-tag">Verified Buyer</span>
+                            <span class="meta-tag">Beats Pro</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=50&h=50&fit=crop" alt="User">
+                            </div>
+                            <div>
+                                <h3>Sarah Mitchell</h3>
+                                <p>Verified Purchase</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">★★★★★</div>
+                        <h4 class="testimonial-title">Great customer service!</h4>
+                        <p class="testimonial-text">Not only is the product excellent, but the customer service is amazing. They helped me choose the perfect product for my needs and answered all my questions. Highly recommend PHLOX!</p>
+                        <div class="testimonial-meta">
+                            <span class="meta-tag">Verified Buyer</span>
+                            <span class="meta-tag">Sony WH</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=50&h=50&fit=crop" alt="User">
+                            </div>
+                            <div>
+                                <h3>Michael Davis</h3>
+                                <p>Verified Purchase</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">★★★★★</div>
+                        <h4 class="testimonial-title">Worth every penny!</h4>
+                        <p class="testimonial-text">Used these for gaming and work. The latency is minimal, and the audio quality is pristine. Battery life lasts all day. Delivery was quick and packaging was secure.</p>
+                        <div class="testimonial-meta">
+                            <span class="meta-tag">Verified Buyer</span>
+                            <span class="meta-tag">Gaming Headset</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=50&h=50&fit=crop" alt="User">
+                            </div>
+                            <div>
+                                <h3>Emily Brown</h3>
+                                <p>Verified Purchase</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">★★★★☆</div>
+                        <h4 class="testimonial-title">Great quality, excellent value</h4>
+                        <p class="testimonial-text">Very impressed with the build quality and sound performance. The price is reasonable for what you get. Customer support was helpful when I had questions.</p>
+                        <div class="testimonial-meta">
+                            <span class="meta-tag">Verified Buyer</span>
+                            <span class="meta-tag">Smartwatch Pro</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=50&h=50&fit=crop" alt="User">
+                            </div>
+                            <div>
+                                <h3>Jessica Lee</h3>
+                                <p>Verified Purchase</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">★★★★★</div>
+                        <h4 class="testimonial-title">Perfect for professionals</h4>
+                        <p class="testimonial-text">As a music producer, I needed quality monitoring headphones. These deliver exactly what I was looking for. The frequency response is accurate, and the build is robust.</p>
+                        <div class="testimonial-meta">
+                            <span class="meta-tag">Verified Buyer</span>
+                            <span class="meta-tag">Studio Monitor</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=50&h=50&fit=crop" alt="User">
+                            </div>
+                            <div>
+                                <h3>David Thompson</h3>
+                                <p>Verified Purchase</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">★★★★★</div>
+                        <h4 class="testimonial-title">Exceeded my expectations</h4>
+                        <p class="testimonial-text">Fast shipping, perfect packaging, and the product arrived in mint condition. The setup was easy, and I was listening to great audio within minutes. Very satisfied!</p>
+                        <div class="testimonial-meta">
+                            <span class="meta-tag">Verified Buyer</span>
+                            <span class="meta-tag">Portable Speaker</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="write-review">
+                    <h2>Share Your Experience</h2>
+                    <p>Have you purchased from PHLOX? We'd love to hear your thoughts!</p>
+                    <button class="btn-primary">Write a Review</button>
+                </div>
+            </section>
+        </div>
+
+        <!-- COMMUNITY PAGE -->
+        <div class="page" id="community-page" style="display:none;">
+            <section class="community-section">
+                <h1>Community Hub</h1>
+                <p class="section-subtitle">Join our community of audio and tech enthusiasts</p>
+
+                <div class="community-grid">
+                    <div class="community-card">
+                        <h2>Community Forum</h2>
+                        <p>Join discussions about products, audio tips, and tech trends with our community members.</p>
+                        <div class="forum-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">5.2K</span>
+                                <span class="stat-label">Members</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">12.5K</span>
+                                <span class="stat-label">Posts</span>
+                            </div>
+                        </div>
+                        <button class="btn-secondary">Visit Forum</button>
+                    </div>
+
+                    <div class="community-card">
+                        <h2>User Guides</h2>
+                        <p>Comprehensive guides to help you get the most out of your PHLOX products.</p>
+                        <div class="guide-list">
+                            <div class="guide-item">Getting Started with Your Headphones</div>
+                            <div class="guide-item">Audio Optimization Tips</div>
+                            <div class="guide-item">Troubleshooting Guide</div>
+                        </div>
+                        <button class="btn-secondary">Browse Guides</button>
+                    </div>
+
+                    <div class="community-card">
+                        <h2>Product Reviews</h2>
+                        <p>In-depth reviews and comparisons from our community experts and users.</p>
+                        <div class="review-highlights">
+                            <span class="highlight-tag">Latest: Beats Pro Analysis</span>
+                            <span class="highlight-tag">Popular: Gaming Headset Guide</span>
+                        </div>
+                        <button class="btn-secondary">Read Reviews</button>
+                    </div>
+
+                    <div class="community-card">
+                        <h2>Events & Contests</h2>
+                        <p>Participate in contests and exclusive events to win amazing prizes.</p>
+                        <div class="event-alert">
+                            🎉 Monthly giveaway - Win $500 product voucher!
+                        </div>
+                        <button class="btn-secondary">View Events</button>
+                    </div>
+                </div>
+
+                <div class="community-featured">
+                    <h2>Featured Discussions</h2>
+                    <div class="discussions-list">
+                        <div class="discussion-item">
+                            <div class="discussion-avatar">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop" alt="User">
+                            </div>
+                            <div class="discussion-content">
+                                <h3>Best setup for music production in 2025</h3>
+                                <p class="discussion-meta">Started by Alex Turner • 234 replies • 1.2K views</p>
+                                <p class="discussion-preview">Discussing the latest equipment recommendations for professional music production...</p>
+                            </div>
+                        </div>
+
+                        <div class="discussion-item">
+                            <div class="discussion-avatar">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=40&h=40&fit=crop" alt="User">
+                            </div>
+                            <div class="discussion-content">
+                                <h3>Anyone else in love with gaming headsets?</h3>
+                                <p class="discussion-meta">Started by Maria Garcia • 156 replies • 890 views</p>
+                                <p class="discussion-preview">Share your favorite gaming audio setups and experiences...</p>
+                            </div>
+                        </div>
+
+                        <div class="discussion-item">
+                            <div class="discussion-avatar">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=40&h=40&fit=crop" alt="User">
+                            </div>
+                            <div class="discussion-content">
+                                <h3>Noise cancellation shootout - comparing top models</h3>
+                                <p class="discussion-meta">Started by James Wilson • 412 replies • 3.2K views</p>
+                                <p class="discussion-preview">Detailed comparison of the best noise cancelling headphones available today...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="community-contributors">
+                    <h2>Top Contributors</h2>
+                    <div class="contributors-grid">
+                        <div class="contributor">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop" alt="Contributor">
+                            <h3>AudioExpert92</h3>
+                            <p>425 helpful posts</p>
+                        </div>
+                        <div class="contributor">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop" alt="Contributor">
+                            <h3>TechGuru</h3>
+                            <p>389 helpful posts</p>
+                        </div>
+                        <div class="contributor">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop" alt="Contributor">
+                            <h3>SoundDesigner</h3>
+                            <p>356 helpful posts</p>
+                        </div>
+                        <div class="contributor">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop" alt="Contributor">
+                            <h3>GamingPro</h3>
+                            <p>298 helpful posts</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- CONTACT PAGE -->
+        <div class="page" id="contact-page" style="display:none;">
+            <section class="contact-section">
+                <h1>Get In Touch</h1>
+                <p class="section-subtitle">We're here to help and answer any question you might have</p>
+
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <div class="info-card">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                            <h3>Chat with us</h3>
+                            <p>Live chat support</p>
+                            <p>Available 24/7</p>
+                        </div>
+
+                        <div class="info-card">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path>
+                            </svg>
+                            <h3>Call us</h3>
+                            <p>+1 (800) 123-4567</p>
+                            <p>Mon-Fri 9AM-9PM EST</p>
+                        </div>
+
+                        <div class="info-card">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                                <path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"></path>
+                            </svg>
+                            <h3>Email us</h3>
+                            <p>support@phlox.com</p>
+                            <p>Response within 24 hours</p>
+                        </div>
+
+                        <div class="info-card">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <h3>Visit us</h3>
+                            <p>123 Tech Street</p>
+                            <p>San Francisco, CA 94105</p>
+                        </div>
+                    </div>
+
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject" required>
+                                <option>General Inquiry</option>
+                                <option>Product Support</option>
+                                <option>Order Status</option>
+                                <option>Feedback</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary">Send Message</button>
+                    </form>
+                </div>
+
+                <div class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-container">
+                        <div class="faq-item">
+                            <h3>What's your return policy?</h3>
+                            <p>We offer a 30-day money-back guarantee on all products. If you're not satisfied, simply return the item in original condition for a full refund.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Do you offer warranty?</h3>
+                            <p>Yes, all products come with a 2-year manufacturer's warranty covering defects in materials and workmanship.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>How long does shipping take?</h3>
+                            <p>Standard shipping takes 5-7 business days. Express shipping options are available for faster delivery.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Do you ship internationally?</h3>
+                            <p>Yes, we ship to most countries worldwide. International shipping costs and times vary by location.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>PHLOX</h3>
+                <p>Premium audio and tech products for everyone</p>
+                <div class="social-links">
+                    <a href="#" title="Facebook">f</a>
+                    <a href="#" title="Twitter">𝕏</a>
+                    <a href="#" title="Instagram">📷</a>
+                    <a href="#" title="YouTube">▶</a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#shop">Shop</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Cookies</a></li>
+                    <li><a href="#">Accessibility</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Newsletter</h4>
+                <p>Subscribe for exclusive offers and updates</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Your email">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 PHLOX. All rights reserved. | Designed with ❤ for tech enthusiasts</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
